@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Buy Product</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;800&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Outfit', sans-serif;
+    }
+
+    body {
+      background-color: #f9f9f9;
+      color: #1a1a1a;
+    }
+
+    /* NAVBAR */
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 60px;
+      backdrop-filter: blur(15px);
+      background: rgba(255, 255, 255, 0.8);
+      border-bottom: 1px solid #ddd;
+    }
+
+    .nav img {
+      width: 55px;
+    }
+
+    .nav1 {
+      display: flex;
+      align-items: center;
+      gap: 30px;
+    }
+
+    ul {
+      list-style: none;
+      display: flex;
+      gap: 25px;
+    }
+
+    a {
+      text-decoration: none;
+      color: #222;
+      font-size: 17px;
+      font-weight: 500;
+      transition: 0.3s ease;
+    }
+
+    a:hover {
+      color: #ff5722;
+    }
+
+    .search {
+      display: flex;
+      align-items: center;
+      background: #f0f0f0;
+      padding: 6px 12px;
+      border-radius: 25px;
+    }
+
+    input {
+      border: none;
+      background: transparent;
+      outline: none;
+      padding: 5px;
+      width: 150px;
+      font-size: 15px;
+    }
+
+    button.search-btn {
+      border: none;
+      background: #ff5722;
+      color: white;
+      border-radius: 50%;
+      width: 30px;
+      height: 30px;
+      cursor: pointer;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    /* BUY PAGE */
+    .container {
+      max-width: 900px;
+      margin: 40px auto;
+      background: #fff;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    }
+
+    .container img {
+      width: 100%;
+      max-height: 400px;
+      object-fit: contain;
+      border-radius: 10px;
+    }
+
+    .product-title {
+      font-size: 32px;
+      font-weight: 700;
+      margin-top: 20px;
+    }
+
+    .product-price {
+      color: #ff5722;
+      font-size: 24px;
+      font-weight: 600;
+      margin: 10px 0;
+    }
+
+    .product-desc {
+      font-size: 16px;
+      line-height: 1.6;
+      margin-bottom: 25px;
+      color: #555;
+    }
+
+    .buy-buttons {
+      display: flex;
+      gap: 20px;
+    }
+
+    .buy-buttons button {
+      padding: 12px 24px;
+      font-size: 16px;
+      background: #ff5722;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .buy-buttons button:hover {
+      background: #e64a19;
+    }
+
+    @media (max-width: 768px) {
+      .nav {
+        flex-direction: column;
+        gap: 15px;
+        padding: 20px;
+      }
+
+      .nav1 {
+        flex-direction: column;
+        gap: 20px;
+      }
+
+      ul {
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .container {
+        margin: 20px;
+        padding: 20px;
+      }
+
+      .product-title {
+        font-size: 26px;
+      }
+
+      .product-price {
+        font-size: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <div class="nav">
+    <img src="modern-futuristic-chair-interior-icon-logo-design-line-vector-removebg-preview.png" alt="logo">
+    <div class="nav1">
+      <ul>
+        <li><a href="home.html">Home</a></li>
+        <li><a href="products.html">Products</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <div class="search">
+        <input type="text" placeholder="Search Here">
+        <button class="search-btn"><i class="fa fa-search"></i></button>
+      </div>
+      <a href="#">Login</a>
+    </div>
+  </div>
+  <div class="container">
+    <img id="product-image" src="" alt="Product Image">
+    <div class="product-title" id="product-title">Loading...</div>
+    <div class="product-price" id="product-price"></div>
+    <div class="product-desc" id="product-desc"></div>
+    <div class="buy-buttons">
+      <button>Buy Now</button>
+      <button>Add to Cart</button>
+    </div>
+  </div>
+
+  <script>
+    const productData = {
+      "modern-chair": {
+        title: "Modern Chair",
+        price: "₹3,499",
+        image: "./Mid-Century_Modern_Swivel_Accent_Chair_-_-3765661.jpg",
+        desc: `
+          Elegant and ergonomic design for your workspace or home. Crafted with premium materials.<br><br>
+          <strong>Color:</strong> Dark Grey<br>
+          <strong>Dimensions:</strong> 90cm x 65cm x 80cm<br>
+          <strong>Material:</strong> Solid wood + PU leather<br>
+          <strong>Delivery:</strong> Free delivery within 5–7 business days<br>
+          <strong>Warranty:</strong> 1 Year on manufacturing defects
+        `
+      },
+      "luxury-sofa": {
+        title: "Luxury Sofa",
+        price: "₹12,999",
+        image: "./soft-empty-blue-doubleseat-sofa-600nw-2449697379.webp",
+        desc: `
+          Experience luxury and comfort with this premium 2-seater sofa. Ultra-soft fabric finish.<br><br>
+          <strong>Color:</strong> Blue<br>
+          <strong>Size:</strong> 180cm x 80cm x 90cm<br>
+          <strong>Material:</strong> Hardwood frame + premium fabric<br>
+          <strong>Warranty:</strong> 2 years<br>
+          <strong>Delivery:</strong> Free delivery and installation
+        `
+      },
+      "wooden-table": {
+        title: "Wooden Table",
+        price: "₹5,699",
+        image: "./248ae441dd8fccc62b29d1adaba5fcbc.jpg",
+        desc: `
+          Classic oak wood table suitable for dining or office use. Built to last.<br><br>
+          <strong>Color:</strong> Oak Brown<br>
+          <strong>Dimensions:</strong> 150cm x 90cm x 75cm<br>
+          <strong>Material:</strong> Solid Oak Wood<br>
+          <strong>Delivery:</strong> Within 4–6 days<br>
+          <strong>Warranty:</strong> 3 Years
+        `
+      },
+      "minimal-bookshelf": {
+        title: "Minimal Bookshelf",
+        price: "₹2,899",
+        image: "./vitra_rayonnage_mural_natural_oak_12_deep_black_04.webp",
+        desc: `
+          Sleek and minimal bookshelf perfect for modern homes.<br><br>
+          <strong>Color:</strong> Light Wood<br>
+          <strong>Material:</strong> Engineered Wood<br>
+          <strong>Capacity:</strong> Up to 50 books<br>
+          <strong>Delivery:</strong> Within 3–5 days<br>
+          <strong>Warranty:</strong> 6 Months
+        `
+      },
+                "beige-sofa": {
+            title: "Beige Sofa",
+            price: "₹10,499",
+            image: "./shopping.webp",
+            desc: `
+                Minimalist 3-seater with light beige upholstery and wooden legs.<br><br>
+                <strong>Color:</strong> Beige<br>
+                <strong>Dimensions:</strong> 200cm x 80cm x 85cm<br>
+                <strong>Material:</strong> Fabric & Solid Wood<br>
+                <strong>Warranty:</strong> 1 Year<br>
+                <strong>Delivery:</strong> Free delivery in 5–7 days
+            `
+            },
+            "orange-chair": {
+            title: "Orange Cushion Chair",
+            price: "₹7,999",
+            image: "./istockphoto-869078270-612x612.jpg",
+            desc: `
+                Cozy and vibrant chair with plush orange cushions and a sturdy base.<br><br>
+                <strong>Color:</strong> Orange<br>
+                <strong>Dimensions:</strong> 100cm x 85cm x 90cm<br>
+                <strong>Material:</strong> Cotton + Metal Frame<br>
+                <strong>Delivery:</strong> Within 4–6 days<br>
+                <strong>Warranty:</strong> 6 Months
+            `
+            },
+            "punto-armchair": {
+            title: "Punto Armchair",
+            price: "₹6,299",
+            image: "./sofa-jednoosobowa-punto.avif",
+            desc: `
+                Plush white armchair perfect for modern living rooms.<br><br>
+                <strong>Color:</strong> White<br>
+                <strong>Material:</strong> Wool-fabric blend<br>
+                <strong>Dimensions:</strong> 90cm x 90cm x 75cm<br>
+                <strong>Delivery:</strong> 3–5 days<br>
+                <strong>Warranty:</strong> 1 Year
+            `
+            },
+            "lounge-chair": {
+            title: "Lounge Sofa Chair",
+            price: "₹9,499",
+            image: "./single-sofa-lounge-sofa.jpg",
+            desc: `
+                Relax in style with our single lounge sofa chair.<br><br>
+                <strong>Color:</strong> Gray<br>
+                <strong>Material:</strong> Polyester + Wooden Legs<br>
+                <strong>Size:</strong> 110cm x 85cm x 90cm<br>
+                <strong>Warranty:</strong> 1 Year
+            `
+            },
+            "olimpia-chair": {
+            title: "Olimpia White Chair",
+            price: "₹5,899",
+            image: "./olimpia-1p-blanco-800x614-1.jpg",
+            desc: `
+                Modern white armchair with sleek design and great comfort.<br><br>
+                <strong>Color:</strong> White<br>
+                <strong>Material:</strong> Fabric + Metal Frame<br>
+                <strong>Dimensions:</strong> 95cm x 75cm x 85cm<br>
+                <strong>Warranty:</strong> 1 Year<br>
+                <strong>Delivery:</strong> 4–6 Days
+            `
+            },
+            "agnes-chair": {
+            title: "Agnes Oak Chair",
+            price: "₹4,899",
+            image: "./1_Single-shot_202_AGNES_BROWNOAK_SOAP-2-1024x1024.jpg",
+            desc: `
+                A fusion of oak and neutral tones, perfect for your study or living room.<br><br>
+                <strong>Color:</strong> Cream + Oak<br>
+                <strong>Material:</strong> Oak wood + fabric<br>
+                <strong>Dimensions:</strong> 85cm x 70cm x 80cm<br>
+                <strong>Warranty:</strong> 1 Year<br>
+                <strong>Delivery:</strong> Free shipping within 5 days
+            `
+            }
+
+    };
+
+    const urlParams = new URLSearchParams(window.location.search);
+    const productKey = urlParams.get('product');
+
+    if (productData[productKey]) {
+      const product = productData[productKey];
+      document.getElementById('product-title').innerText = product.title;
+      document.getElementById('product-price').innerText = product.price;
+      document.getElementById('product-image').src = product.image;
+      document.getElementById('product-image').alt = product.title;
+      document.getElementById('product-desc').innerHTML = product.desc;
+    } else {
+      document.getElementById('product-title').innerText = "Product Not Found";
+      document.getElementById('product-desc').innerHTML = "Sorry, the product you're looking for doesn't exist.";
+    }
+  </script>
+
+</body>
+</html>

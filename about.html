@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>About</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;800&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Outfit', sans-serif;
+    }
+
+    body {
+      background-color: #fafafa;
+      color: #1a1a1a;
+    }
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 60px;
+      backdrop-filter: blur(15px);
+      background: rgba(255, 255, 255, 0.8);
+      border-bottom: 1px solid #ddd;
+    }
+
+    .nav img {
+      width: 55px;
+    }
+
+    .nav1 {
+      display: flex;
+      align-items: center;
+      gap: 30px;
+    }
+
+    ul {
+      list-style: none;
+      display: flex;
+      gap: 25px;
+    }
+
+    a {
+      text-decoration: none;
+      color: #222;
+      font-size: 17px;
+      font-weight: 500;
+      transition: 0.3s ease;
+    }
+
+    a:hover {
+      color: #ff5722;
+    }
+
+    .search {
+      display: flex;
+      align-items: center;
+      background: #f0f0f0;
+      padding: 6px 12px;
+      border-radius: 25px;
+    }
+
+    input {
+      border: none;
+      background: transparent;
+      outline: none;
+      padding: 5px;
+      width: 150px;
+      font-size: 15px;
+    }
+
+    button {
+      border: none;
+      background: #ff5722;
+      color: white;
+      border-radius: 50%;
+      width: 30px;
+      height: 30px;
+      cursor: pointer;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .about-section {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      padding: 80px 60px;
+      gap: 60px;
+    }
+
+    .about-text {
+      flex: 1 1 400px;
+    }
+
+    .about-text h2 {
+      font-size: 42px;
+      margin-bottom: 20px;
+      color: #1a1a1a;
+    }
+
+    .about-text p {
+      font-size: 18px;
+      line-height: 1.6;
+      color: #444;
+      max-width: 600px;
+    }
+
+    .about-image {
+      flex: 1 1 400px;
+    }
+
+    .about-image img {
+      width: 100%;
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    }
+
+    @media (max-width: 768px) {
+      .nav {
+        flex-direction: column;
+        gap: 15px;
+        padding: 20px;
+      }
+
+      .nav1 {
+        flex-direction: column;
+        gap: 20px;
+      }
+
+      ul {
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .about-section {
+        flex-direction: column;
+        padding: 40px 20px;
+      }
+
+      .about-text h2 {
+        font-size: 32px;
+      }
+
+      .about-text p {
+        font-size: 16px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <div class="nav">
+    <img src="modern-futuristic-chair-interior-icon-logo-design-line-vector-removebg-preview.png" alt="logo">
+    <div class="nav1">
+      <ul>
+        <li><a href="home.html">Home</a></li>
+        <li><a href="products.html">Products</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <div class="search">
+        <input type="text" placeholder="Search Here">
+        <button><i class="fa fa-search"></i></button>
+      </div>
+      <a href="./login.html">Login</a>
+    </div>
+  </div>
+
+  <section class="about-section">
+    <div class="about-text">
+      <h2>About Our Brand</h2>
+      <p>
+        Attractive Furniture is committed to transforming spaces into experiences.
+        Our designs blend comfort, innovation, and elegance. Whether it’s a home, office, or studio,
+        our handpicked collections help you express your style with authenticity.
+        <br><br>
+        We believe in quality craftsmanship and sustainable materials to offer timeless
+        furniture pieces that last for generations. 
+      </p>
+    </div>
+    <div class="about-image">
+      <img src="./500x500.webp" alt="About Image">
+    </div>
+  </section>
+
+</body>
+</html>

@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Products</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;800&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Outfit', sans-serif;
+    }
+
+    body {
+      background-color: #f9f9f9;
+      color: #1a1a1a;
+    }
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 60px;
+      backdrop-filter: blur(15px);
+      background: rgba(255, 255, 255, 0.8);
+      border-bottom: 1px solid #ddd;
+    }
+
+    .nav img {
+      width: 55px;
+    }
+
+    .nav1 {
+      display: flex;
+      align-items: center;
+      gap: 30px;
+    }
+
+    ul {
+      list-style: none;
+      display: flex;
+      gap: 25px;
+    }
+
+    a {
+      text-decoration: none;
+      color: #222;
+      font-size: 17px;
+      font-weight: 500;
+      transition: 0.3s ease;
+    }
+
+    a:hover {
+      color: #ff5722;
+    }
+
+    .search {
+      display: flex;
+      align-items: center;
+      background: #f0f0f0;
+      padding: 6px 12px;
+      border-radius: 25px;
+    }
+
+    input {
+      border: none;
+      background: transparent;
+      outline: none;
+      padding: 5px;
+      width: 150px;
+      font-size: 15px;
+    }
+
+    button.search-btn {
+      border: none;
+      background: #ff5722;
+      color: white;
+      border-radius: 50%;
+      width: 30px;
+      height: 30px;
+      cursor: pointer;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .title {
+      text-align: center;
+      font-size: 42px;
+      font-weight: 700;
+      padding: 60px 20px 30px;
+      color: #333;
+    }
+
+    .products {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+      padding: 20px 60px 60px;
+    }
+
+    .card {
+      background: #fff;
+      border-radius: 20px;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+      overflow: hidden;
+      transition: 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 25px rgba(0,0,0,0.1);
+    }
+
+    .card img {
+      width: 100%;
+      height: 220px;
+      object-fit: contain;
+    }
+
+    .card-content {
+      padding: 20px;
+    }
+
+    .card-title {
+      font-size: 20px;
+      font-weight: 600;
+      margin-bottom: 10px;
+      color: #1a1a1a;
+    }
+
+    .card-desc {
+      font-size: 14px;
+      color: #555;
+      margin-bottom: 15px;
+    }
+
+    .price {
+      font-weight: 600;
+      font-size: 16px;
+      color: #ff5722;
+    }
+
+    .buy-btn {
+      display: inline-block;
+      margin-top: 10px;
+      background-color: #ff5722;
+      color: white;
+      padding: 10px 18px;
+      border-radius: 8px;
+      font-size: 14px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: background 0.3s;
+    }
+
+    .buy-btn:hover {
+      background-color: #e64a19;
+    }
+
+    @media (max-width: 768px) {
+      .nav {
+        flex-direction: column;
+        gap: 15px;
+        padding: 20px;
+      }
+
+      .nav1 {
+        flex-direction: column;
+        gap: 20px;
+      }
+
+      ul {
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .title {
+        font-size: 32px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="nav">
+    <img src="modern-futuristic-chair-interior-icon-logo-design-line-vector-removebg-preview.png" alt="logo">
+    <div class="nav1">
+      <ul>
+        <li><a href="home.html">Home</a></li>
+        <li><a href="products.html">Products</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <div class="search">
+        <input type="text" placeholder="Search Here">
+        <button class="search-btn"><i class="fa fa-search"></i></button>
+      </div>
+      <a href="./login.html">Login</a>
+    </div>
+  </div>
+
+  <div class="title">Explore Our Bestselling Furniture</div>
+  <div class="products">
+    <div class="card">
+      <img src="./Mid-Century_Modern_Swivel_Accent_Chair_-_-3765661.jpg" alt="Chair">
+      <div class="card-content">
+        <div class="card-title">Modern Chair</div>
+        <div class="card-desc">Elegant and ergonomic design for your workspace or home.</div>
+        <div class="price">₹3,499</div>
+        <a href="buy.html?product=modern-chair" class="buy-btn">Buy Now</a>
+      </div>
+    </div>
+    <div class="card">
+      <img src="./soft-empty-blue-doubleseat-sofa-600nw-2449697379.webp" alt="Sofa">
+      <div class="card-content">
+        <div class="card-title">Luxury Sofa</div>
+        <div class="card-desc">Experience comfort with our ultra-soft 2-seater sofa.</div>
+        <div class="price">₹12,999</div>
+        <a href="buy.html?product=luxury-sofa" class="buy-btn">Buy Now</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="./248ae441dd8fccc62b29d1adaba5fcbc.jpg" alt="Table">
+      <div class="card-content">
+        <div class="card-title">Wooden Table</div>
+        <div class="card-desc">Solid oak finish perfect for dining or workspace.</div>
+        <div class="price">₹5,699</div>
+        <a href="buy.html?product=wooden-table" class="buy-btn">Buy Now</a>
+      </div>
+    </div>
+    <div class="card">
+      <img src="./vitra_rayonnage_mural_natural_oak_12_deep_black_04.webp" alt="Bookshelf">
+      <div class="card-content">
+        <div class="card-title">Minimal Bookshelf</div>
+        <div class="card-desc">Sleek vertical design with ample space for your collection.</div>
+        <div class="price">₹2,899</div>
+        <a href="buy.html?product=minimal-bookshelf" class="buy-btn">Buy Now</a>
+      </div>
+    </div>
+    <div class="card">
+  <img src="./shopping.webp" alt="Beige Sofa">
+  <div class="card-content">
+    <div class="card-title">Beige Sofa</div>
+    <div class="card-desc">Minimal and modern 3-seater with wooden legs.</div>
+    <div class="price">₹10,499</div>
+    <a href="buy.html?product=beige-sofa" class="buy-btn">Buy Now</a>
+  </div>
+</div>
+
+<div class="card">
+  <img src="./istockphoto-869078270-612x612.jpg" alt="Orange Cushion Chair">
+  <div class="card-content">
+    <div class="card-title">Orange Cushion Chair</div>
+    <div class="card-desc">Super comfy padded chair for cozy corners.</div>
+    <div class="price">₹7,999</div>
+    <a href="buy.html?product=orange-chair" class="buy-btn">Buy Now</a>
+  </div>
+</div>
+
+<div class="card">
+  <img src="./sofa-jednoosobowa-punto.avif" alt="Punto Armchair">
+  <div class="card-content">
+    <div class="card-title">Punto Armchair</div>
+    <div class="card-desc">Rounded soft-touch white fabric armchair.</div>
+    <div class="price">₹6,299</div>
+    <a href="buy.html?product=punto-armchair" class="buy-btn">Buy Now</a>
+  </div>
+</div>
+
+<div class="card">
+  <img src="./single-sofa-lounge-sofa.jpg" alt="Lounge Sofa Chair">
+  <div class="card-content">
+    <div class="card-title">Lounge Sofa Chair</div>
+    <div class="card-desc">Spacious and modern lounge seat with soft padding.</div>
+    <div class="price">₹9,499</div>
+    <a href="buy.html?product=lounge-chair" class="buy-btn">Buy Now</a>
+  </div>
+</div>
+
+<div class="card">
+  <img src="./olimpia-1p-blanco-800x614-1.jpg" alt="Olimpia White Chair">
+  <div class="card-content">
+    <div class="card-title">Olimpia White Chair</div>
+    <div class="card-desc">Sleek white design with cushioned seating.</div>
+    <div class="price">₹5,899</div>
+    <a href="buy.html?product=olimpia-chair" class="buy-btn">Buy Now</a>
+  </div>
+</div>
+
+<div class="card">
+  <img src="./1_Single-shot_202_AGNES_BROWNOAK_SOAP-2-1024x1024.jpg" alt="Agnes Oak Chair">
+  <div class="card-content">
+    <div class="card-title">Agnes Oak Chair</div>
+    <div class="card-desc">Oak wooden finish with cream cushioning.</div>
+    <div class="price">₹4,899</div>
+    <a href="buy.html?product=agnes-chair" class="buy-btn">Buy Now</a>
+  </div>
+</div>
+
+
+
+  </div>
+
+</body>
+</html>
